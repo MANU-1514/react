@@ -1,0 +1,146 @@
+use KEC
+
+db.createCollection("ManuSriram")
+
+db.ManuSriram.insertOne({
+  name: "Manu Sriram",
+  age: "19",
+  email: "manusriram15@gmail.com",
+  department: "EIE"
+})
+
+db.ManuSriram.insertOne({
+  email: "manusriram15@gmail.com",
+  dep: "EIE"
+})
+
+db.ManuSriram.insertMany([
+  { name: "Thomas", age: "19", email: "thomas@gmail.com", dep: "ECE" },
+  { name: "Ram", age: "57", email: "ram@gmail.com", dep: "CSE" }
+])
+
+db.ManuSriram.insertMany([
+  { name: "Durai", age: "54", email: "durai@gmail.com", dep: "EEE", gender: "Male" },
+  { name: "Amutha", age: "42", email: "amutha@gmail.com", dep: "AIML", gender: "Female" },
+  { name: "Ragavi", age: "23", email: "ragavi@gmail.com", dep: "EEE", gender: "Female" }
+])
+
+db.ManuSriram.insertMany([
+  { name: "Dharanisri", age: "60", email: "dharanisri@gmail.com", gender: "Female" },
+  { name: "Sutharshan", age: "46", email: "sutharshan@gmail.com", gender: "Unknown" }
+])
+
+db.ManuSriram.find({ name: "Dharanisri" })
+
+db.ManuSriram.updateOne(
+  { name: "Manu Sriram" },
+  { $set: { age: 18 } }
+)
+
+db.ManuSriram.updateOne(
+  { name: "Sutharshan" },
+  { $set: { gender: "Female" } }
+)
+
+db.ManuSriram.updateMany(
+  {},
+  { $set: { phone: "9047323169" } }
+)
+
+db.ManuSriram.updateOne(
+  { name: "Sutharshan" },
+  { $set: {
+    age: "19",
+    email: "sutharshank.23eie@kongu.edu",
+    phone: "7339012371"
+  }}
+)
+
+db.ManuSriram.updateOne(
+  { dep: "EIE" },
+  { $set: { name: "Manu Sriram" } }
+)
+
+db.ManuSriram.updateOne(
+  { email: "manusriram15@gmail.com" },
+  { $set: { name: "Manu Sriram" } }
+)
+
+db.ManuSriram.find().sort({ name: 1 })
+db.ManuSriram.find().sort({ age: 1 })
+{
+  _id: ObjectId('685a26d1235b230cbc8f2686'),
+  name: 'Manu Sriram',
+  age: 18,
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2736235b230cbc8f2687'),
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2769235b230cbc8f2688'),
+  email: 'manusriram15@gmail.com',
+  dep: 'EIE',
+  phone: '9047323169',
+  name: 'Manu Sriram'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f2689'),
+  name: 'Thomas',
+  age: '19',
+  email: 'thomas@gmail.com',
+  dep: 'ECE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2b69235b230cbc8f268a'),
+  name: 'Ram',
+  age: '57',
+  email: 'ram@gmail.com',
+  dep: 'CSE',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268b'),
+  name: 'Durai',
+  age: '54',
+  email: 'durai@gmail.com',
+  dep: 'EEE',
+  gender: 'Male',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268c'),
+  name: 'Amutha',
+  age: '42',
+  email: 'amutha@gmail.com',
+  dep: 'AIML',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2ce5235b230cbc8f268d'),
+  name: 'Ragavi',
+  age: '23',
+  email: 'ragavi@gmail.com',
+  dep: 'EEE',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268e'),
+  name: 'Dharanisri',
+  age: '60',
+  email: 'dharanisri@gmail.com',
+  gender: 'Female',
+  phone: '9047323169'
+}
+{
+  _id: ObjectId('685a2dbe235b230cbc8f268f'),
+  name: 'Sutharshan',
+  age: '19',
+  email: 'sutharshank.23eie@kongu.edu',
+  gender: 'Female',
+  phone: '7339012371'
+}
